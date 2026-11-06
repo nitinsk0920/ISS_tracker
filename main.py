@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import os
 import time
 
-load_dotenv()
 
 mail=os.environ.get("EMAIL")
 password=os.environ.get("PASSWORD")
