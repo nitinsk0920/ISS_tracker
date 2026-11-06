@@ -50,9 +50,7 @@ def send_email():
         connection.sendmail(from_addr=mail, to_addrs=mail, msg=f"subject: Look up 👆\n\n iss 🛰️ has reached your location at {datetime.now()} in the sky")
     print("Email sent")
 
-prev_cond= False
-while True:
-    time.sleep(60)
+def main():
     try:
         cond= issoverhead() and iss_night()
         if cond and not prev_cond:
@@ -61,8 +59,10 @@ while True:
 
     except Exception as error:
         print(f"Error: {error}")
+    time.sleep(60)
 
 # BONUS: run the code every 60 seconds.
 
 
-
+if __name__ == "__main__":
+    main()
